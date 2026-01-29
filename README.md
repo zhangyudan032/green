@@ -4,28 +4,70 @@
 
 ## 项目信息
 
-- **当前版本**: v1.0.0
-- **技术栈**: React 18 + Vite + Tailwind CSS
-- **开发状态**: PRD阶段
+- **当前版本**: v0.1.0
+- **技术栈**: React 18 + Vite + Tailwind CSS + React Router
+- **开发状态**: 基础框架已完成
 
 ## 快速开始
 
-项目尚未初始化代码，当前处于PRD规划阶段。
+### 安装依赖
+```bash
+cd green
+npm install
+```
+
+### 启动开发服务器
+```bash
+npm run dev
+```
+
+访问：http://localhost:3000
+
+### 构建生产版本
+```bash
+npm run build
+```
 
 ## 项目结构
 
 ```
 green/
 ├── docs/
-│   └── prd/              # PRD文档目录（按版本管理）
-├── src/                  # 源代码（待创建）
-├── public/               # 公共资源（待创建）
+│   ├── prd/                  # PRD文档目录（按版本管理）
+│   ├── VERSION_MANAGEMENT.md # 版本管理规范
+│   └── DEVELOPMENT_GUIDE.md  # 开发指南
+├── src/
+│   ├── components/           # React组件
+│   │   └── Layout.jsx        # 布局组件
+│   ├── pages/                # 页面组件
+│   │   ├── Home.jsx          # 首页
+│   │   ├── Family.jsx        # 家庭页
+│   │   ├── Stories.jsx       # 故事页
+│   │   └── Game.jsx          # 游戏页
+│   ├── data/                 # 数据文件
+│   │   └── greenData.js      # 格林的数据
+│   ├── assets/               # 静态资源
+│   ├── App.jsx               # 根组件
+│   ├── main.jsx              # 入口文件
+│   └── index.css             # 全局样式
+├── public/                   # 公共资源
+├── package.json
+├── vite.config.js
 └── README.md
 ```
+
+## 功能特性
+
+- 首页：展示狼王格林的基本信息和性格特征
+- 家庭页：展示格林的家庭成员信息
+- 故事页：时间轴形式展示有趣故事
+- 游戏页：互动识别游戏，找出哪张是格林本人
 
 ## 文档
 
 - [PRD v1.0.0](./docs/prd/v1.0.0-prd.md) - 产品需求文档初始版本
+- [开发指南](./docs/DEVELOPMENT_GUIDE.md) - 开发指南和常见任务
+- [版本管理规范](./docs/VERSION_MANAGEMENT.md) - Git和PRD版本管理
 
 ## 版本管理
 
@@ -49,8 +91,9 @@ green/
 | Git Tag | PRD版本 | 说明 |
 |---------|---------|------|
 | - | v1.0.0 | 初始PRD，技术选型 |
-| - | v1.1.0 | （待创建）项目初始化 |
-| - | v1.2.0 | （待创建）首页和家庭页完成 |
+| v0.1.0 | - | 项目初始化，完成基础框架和四个页面骨架 |
+| - | v1.1.0 | （待创建）完善页面功能和样式 |
+| - | v1.2.0 | （待创建）添加真实数据和视频集成 |
 
 ## 开发计划
 
