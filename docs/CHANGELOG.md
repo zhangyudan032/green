@@ -162,4 +162,67 @@ b59c812 docs(prd): 初始化项目，创建v1.0.0 PRD文档
 
 ---
 
-最后更新：2026-01-29
+## v2.0.0 - 2026-01-31 (开发中)
+
+### 版本目标
+v2.0.0 是一次重大架构升级，将应用从多页面改为单页面，并大幅提升交互体验。
+
+### 核心变更
+1. **架构重构**: 多页面应用 → 单页面应用
+2. **交互升级**: 添加丰富的动画和悬浮效果
+3. **模块化设计**: 图片+文字卡片，支持跳转网页/视频
+4. **视觉优化**: Hero Section、渐变效果、视差滚动
+
+### Git 分支管理
+- **master 分支**: 保持 v1.0.0 稳定版本
+- **develop-v2.0.0 分支**: v2.0.0 开发分支 (当前)
+
+### 文档准备
+- [x] 创建 PRD v2.0.0 文档
+- [x] 创建迁移指南 (MIGRATION_v1_to_v2.md)
+- [x] 创建开发分支 (develop-v2.0.0)
+- [x] 更新 CHANGELOG
+
+### 技术栈变更
+**移除**:
+- React Router v6
+
+**新增**:
+- Framer Motion (动画)
+- React Scroll (平滑滚动)
+- React Icons (图标)
+
+### 组件结构变更
+```
+v1.0.0: pages/ (HomePage, FamilyPage, StoriesPage, GamePage)
+    ↓
+v2.0.0: sections/ (HeroSection, AboutSection, FamilySection, StoriesSection, GameSection)
+```
+
+### 开发计划
+- [ ] Phase 1: 移除路由，搭建单页面结构
+- [ ] Phase 2: 实现 Header 和 Hero Section
+- [ ] Phase 3: 实现 About 和 Family Section
+- [ ] Phase 4: 实现 Stories 和 Game Section
+- [ ] Phase 5: 添加动画效果 (Framer Motion)
+- [ ] Phase 6: 响应式适配和优化
+
+### 待完成功能
+- [ ] 安装新依赖 (framer-motion, react-scroll, react-icons)
+- [ ] 移除旧依赖 (react-router-dom)
+- [ ] 创建新组件结构
+- [ ] 迁移现有代码到新架构
+- [ ] 实现动画效果
+- [ ] 实现视频模态框
+- [ ] 实现卡片跳转功能
+- [ ] 响应式优化
+- [ ] 性能优化
+
+### Git 提交历史
+```
+(待开发)
+```
+
+---
+
+最后更新：2026-01-31
