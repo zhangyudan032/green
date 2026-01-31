@@ -18,14 +18,14 @@
     <title>天眼狼王·格林 - 时间线叙事版 (v3.0.0)</title>
 
     <style>
-      /* 页面加载动画 */
+      /* 页面加载动画 - 深色主题 */
       #loading {
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background: #0f172a;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -42,8 +42,8 @@
       .loader {
         width: 60px;
         height: 60px;
-        border: 5px solid rgba(255, 255, 255, 0.3);
-        border-top-color: white;
+        border: 5px solid rgba(16, 185, 129, 0.2);
+        border-top-color: #10b981;
         border-radius: 50%;
         animation: spin 1s linear infinite;
       }
@@ -53,7 +53,7 @@
       }
 
       .loading-text {
-        color: white;
+        color: #e2e8f0;
         margin-top: 20px;
         font-size: 18px;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -70,8 +70,8 @@
     <!-- React应用挂载点 -->
     <div id="root"></div>
 
-    <!-- 引入主应用 -->
-    <script type="module" src="/src/main.jsx"></script>
+    <!-- 引入主应用 - V3版本 -->
+    <script type="module" src="/src/main_v3.jsx"></script>
 
     <!-- 隐藏加载动画 -->
     <script>
