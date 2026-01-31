@@ -57,6 +57,9 @@
 html {
   scroll-behavior: smooth; /* 平滑滚动 */
   overflow-x: hidden;
+  /* 启用硬件加速 */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
 
 body {
@@ -70,6 +73,10 @@ body {
   background-color: var(--bg-primary);
   line-height: 1.6;
   overflow-x: hidden;
+  /* 性能优化 */
+  -webkit-font-smoothing: subpixel-antialiased;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 code {
@@ -219,10 +226,11 @@ code {
 /* 悬浮卡片效果 */
 .hover-lift {
   transition: transform var(--transition-base), box-shadow var(--transition-base);
+  will-change: transform;
 }
 
 .hover-lift:hover {
-  transform: translateY(-8px);
+  transform: translateY(-8px) translateZ(0);
   box-shadow: var(--shadow-xl);
 }
 
@@ -282,6 +290,27 @@ code {
 .back-to-top:hover {
   background: var(--primary-dark);
   transform: translateY(-5px);
+}
+
+/* ========================================
+   性能优化类
+   ======================================== */
+.gpu-accelerated {
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  will-change: transform;
+}
+
+.smooth-animation {
+  will-change: opacity, transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* 图片优化 */
+img {
+  content-visibility: auto;
+  will-change: auto;
 }
 
 /* ========================================
