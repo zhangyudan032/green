@@ -162,66 +162,211 @@ b59c812 docs(prd): 初始化项目，创建v1.0.0 PRD文档
 
 ---
 
-## v2.0.0 - 2026-01-31 (开发中)
+## v2.0.0 - 2026-01-31 (核心开发完成)
 
 ### 版本目标
 v2.0.0 是一次重大架构升级，将应用从多页面改为单页面，并大幅提升交互体验。
 
 ### 核心变更
-1. **架构重构**: 多页面应用 → 单页面应用
-2. **交互升级**: 添加丰富的动画和悬浮效果
-3. **模块化设计**: 图片+文字卡片，支持跳转网页/视频
-4. **视觉优化**: Hero Section、渐变效果、视差滚动
+1. **架构重构**: 多页面应用 → 单页面应用 ✅
+2. **交互升级**: 添加丰富的动画和悬浮效果 ✅
+3. **模块化设计**: 图片+文字卡片，支持跳转网页/视频 ✅
+4. **视觉优化**: Hero Section、渐变效果、视差滚动 ✅
 
 ### Git 分支管理
 - **master 分支**: 保持 v1.0.0 稳定版本
 - **develop-v2.0.0 分支**: v2.0.0 开发分支 (当前)
 
-### 文档准备
-- [x] 创建 PRD v2.0.0 文档
-- [x] 创建迁移指南 (MIGRATION_v1_to_v2.md)
-- [x] 创建开发分支 (develop-v2.0.0)
-- [x] 更新 CHANGELOG
+### 完成内容
 
-### 技术栈变更
-**移除**:
-- React Router v6
+#### 1. 依赖管理
+- [x] 移除 react-router-dom
+- [x] 安装 framer-motion (v11.0.0)
+- [x] 安装 react-scroll (v1.9.0)
+- [x] 安装 react-icons (v5.0.0)
 
-**新增**:
-- Framer Motion (动画)
-- React Scroll (平滑滚动)
-- React Icons (图标)
-
-### 组件结构变更
+#### 2. 项目结构重构
 ```
-v1.0.0: pages/ (HomePage, FamilyPage, StoriesPage, GamePage)
-    ↓
-v2.0.0: sections/ (HeroSection, AboutSection, FamilySection, StoriesSection, GameSection)
+src/
+├── components/
+│   ├── layout/               # 布局组件
+│   │   ├── Header.jsx        ✅ 固定导航栏 + 平滑滚动
+│   │   └── Footer.jsx        ✅ 版权信息 + 回到顶部
+│   ├── sections/             # 区块组件
+│   │   ├── HeroSection.jsx   ✅ 全屏主视觉区
+│   │   ├── AboutSection.jsx  ✅ 基本信息展示
+│   │   ├── FamilySection.jsx ✅ 家庭成员网格
+│   │   ├── StoriesSection.jsx ✅ 故事卡片展示
+│   │   └── GameSection.jsx   ✅ 互动游戏
+│   └── common/               # 通用组件
+│       ├── Card.jsx          ✅ 通用卡片组件
+│       ├── VideoModal.jsx    ✅ 视频弹窗
+│       └── ImageCard.jsx     ✅ 图片卡片
+├── data/
+│   └── greenData.js          ✅ 增强数据结构
+├── App.jsx                   ✅ 单页面主组件
+└── index.css                 ✅ 全局样式+动画
 ```
 
-### 开发计划
-- [ ] Phase 1: 移除路由，搭建单页面结构
-- [ ] Phase 2: 实现 Header 和 Hero Section
-- [ ] Phase 3: 实现 About 和 Family Section
-- [ ] Phase 4: 实现 Stories 和 Game Section
-- [ ] Phase 5: 添加动画效果 (Framer Motion)
-- [ ] Phase 6: 响应式适配和优化
+#### 3. 核心功能实现
 
-### 待完成功能
-- [ ] 安装新依赖 (framer-motion, react-scroll, react-icons)
-- [ ] 移除旧依赖 (react-router-dom)
-- [ ] 创建新组件结构
-- [ ] 迁移现有代码到新架构
-- [ ] 实现动画效果
-- [ ] 实现视频模态框
-- [ ] 实现卡片跳转功能
-- [ ] 响应式优化
-- [ ] 性能优化
+##### Header 导航栏
+- 固定在顶部（sticky）
+- 滚动时背景变化（半透明 → 实色）
+- 平滑滚动到对应区块（react-scroll）
+- 响应式汉堡菜单（移动端）
+- 当前区块高亮显示
+
+##### Hero Section (主视觉区)
+- 全屏展示（100vh）
+- 渐变背景动画
+- 标题和副标题动画入场
+- 向下滚动提示（循环动画）
+- 平滑滚动按钮
+
+##### About Section (基本信息区)
+- 左右分栏布局（图片+文字）
+- 图片悬浮放大效果
+- 别名标签展示
+- 性格特征卡片（带悬浮动画）
+- 交错渐入动画
+
+##### Family Section (家庭成员区)
+- 响应式网格布局（1/2/3列）
+- Card 组件复用
+- 交错渐入动画（stagger）
+- 支持视频播放和外部链接
+- VideoModal 弹窗集成
+
+##### Stories Section (故事展示区)
+- 2列网格布局
+- ImageCard 组件展示
+- 图片悬浮遮罩效果
+- 支持视频和外部链接
+- 缩放渐入动画
+
+##### Game Section (互动游戏区)
+- 图片网格（2x3 / 3x3）
+- 点击选择交互
+- 答题反馈动画（成功/失败）
+- 成功后自动播放视频
+- 重新开始功能
+- 选中状态高亮（绿色/红色边框）
+
+##### Footer 底部
+- 版权信息
+- 技术栈展示
+- 回到顶部按钮（滚动>500px显示）
+- 按钮悬浮和点击动画
+
+#### 4. 通用组件
+
+##### Card 组件
+- 支持图片+标题+描述
+- 可配置悬浮效果（lift/scale/none）
+- 支持外部链接跳转
+- 支持视频播放
+- 自定义点击事件
+
+##### VideoModal 组件
+- 支持 B站/YouTube 视频
+- 点击背景/ESC键关闭
+- 进出动画效果
+- 禁止背景滚动
+- 响应式尺寸
+
+##### ImageCard 组件
+- 专注图片展示
+- 悬浮遮罩层动画
+- 图片缩放效果
+- 支持视频/链接图标
+- 文字渐入效果
+
+#### 5. 样式系统
+
+##### 全局 CSS 变量
+- 主色调（primary, secondary）
+- 中性色（wolf-gray, wolf-dark）
+- 背景色（bg-primary, bg-secondary）
+- 阴影级别（sm/md/lg/xl）
+- 过渡时间（fast/base/slow）
+
+##### 动画定义
+- fadeIn / fadeInUp / fadeInDown
+- scaleIn / pulse / shake / spin
+- gradientShift (渐变背景动画)
+
+##### 工具类
+- container-custom (最大宽度容器)
+- gradient-bg / gradient-bg-animated
+- gradient-text (渐变文字)
+- glass-effect (毛玻璃效果)
+- hover-lift (悬浮上浮)
+- image-overlay (图片遮罩)
+
+##### 响应式设计
+- 断点：768px (移动/桌面)
+- 自适应间距和字体
+- 自定义滚动条样式
+
+#### 6. 数据结构增强
+
+**greenInfo**:
+- 新增 `description` (详细介绍)
+- 新增 `heroImage` (Hero背景图)
+
+**familyMembers**:
+- 新增 `detailDescription` (详细介绍)
+- 新增 `link` (外部链接)
+- 新增 `videoUrl` (视频链接)
+
+**stories**:
+- 新增 `externalLink` (外部网页链接)
+- 更丰富的故事文案
+
+**gameData**:
+- 新增 `question` / `successTitle` / `failTitle`
+- 新增 `successMessage` / `failMessage`
+- 每个选项独立的反馈信息
+
+### 开发阶段完成情况
+- [x] Phase 1: 移除路由，搭建单页面结构
+- [x] Phase 2: 实现 Header 和 Hero Section
+- [x] Phase 3: 实现 About 和 Family Section
+- [x] Phase 4: 实现 Stories 和 Game Section
+- [x] Phase 5: 添加动画效果 (Framer Motion)
+- [ ] Phase 6: 响应式适配和优化（待测试）
 
 ### Git 提交历史
 ```
-(待开发)
+5d75c3e docs(v2.0.0): 创建 v2.0.0 PRD 和迁移文档
+e829577 feat(v2.0.0): 完成单页面架构重构和组件开发
 ```
+
+### 待完成事项
+- [ ] 替换占位图片为真实素材
+- [ ] 补充真实视频链接
+- [ ] 多端测试（桌面/平板/手机）
+- [ ] 性能优化（图片懒加载）
+- [ ] 浏览器兼容性测试
+- [ ] 添加 loading 状态
+
+### 技术亮点
+1. ✨ Framer Motion 动画系统完整集成
+2. ✨ 单页面平滑滚动体验
+3. ✨ 响应式组件化设计
+4. ✨ 视频弹窗无缝播放
+5. ✨ 丰富的交互反馈动画
+6. ✨ 模块化数据驱动架构
+7. ✨ CSS变量主题系统
+8. ✨ 优雅的错误处理（图片加载失败）
+
+### 下一步计划
+1. 运行开发服务器测试功能
+2. 替换真实图片和视频素材
+3. 多设备响应式测试
+4. 性能优化和打包
+5. 准备发布到 master 分支
 
 ---
 
