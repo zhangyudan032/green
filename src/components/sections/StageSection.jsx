@@ -5,19 +5,19 @@ import StoryCard from './StoryCard'
 const StageSection = memo(({ stage }) => {
   // 主题色配置
   const themeColors = {
-    warm: 'bg-gradient-to-br from-orange-50 to-yellow-50',
-    grassland: 'bg-gradient-to-br from-green-50 to-blue-50',
-    mature: 'bg-gradient-to-br from-blue-50 to-gray-50',
-    emotional: 'bg-gradient-to-br from-purple-50 to-pink-50',
-    reflection: 'bg-gradient-to-br from-yellow-50 to-amber-50'
+    warm: 'bg-gradient-to-br from-slate-900 to-slate-800',
+    grassland: 'bg-gradient-to-br from-slate-900 to-slate-800',
+    mature: 'bg-gradient-to-br from-slate-900 to-black',
+    emotional: 'bg-gradient-to-br from-slate-900 to-slate-800',
+    reflection: 'bg-gradient-to-br from-slate-900 to-slate-800'
   }
 
   const titleGradients = {
-    warm: 'from-orange-500 to-yellow-500',
-    grassland: 'from-green-600 to-blue-500',
-    mature: 'from-blue-700 to-gray-700',
-    emotional: 'from-purple-600 to-pink-600',
-    reflection: 'from-yellow-700 to-amber-800'
+    warm: 'from-orange-400 to-yellow-400',
+    grassland: 'from-emerald-400 to-teal-400',
+    mature: 'from-blue-400 to-slate-400',
+    emotional: 'from-purple-400 to-pink-400',
+    reflection: 'from-yellow-400 to-amber-400'
   }
 
   const bgColor = themeColors[stage.colorTheme] || themeColors.grassland
@@ -37,20 +37,20 @@ const StageSection = memo(({ stage }) => {
           transition={{ duration: 0.5, ease: "easeOut" }}
           className="text-center mb-16"
         >
-          <div className="text-sm text-gray-500 mb-2">阶段 {stage.id}</div>
+          <div className="text-sm text-slate-500 mb-2">阶段 {stage.id}</div>
           <h2 className={`text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r ${titleGradient} bg-clip-text text-transparent`}>
             {stage.title}
           </h2>
-          <div className="text-gray-600 text-lg mb-6">{stage.timeRange}</div>
-          <p className="text-gray-700 max-w-2xl mx-auto leading-relaxed">
+          <div className="text-slate-400 text-lg mb-6">{stage.timeRange}</div>
+          <p className="text-slate-300 max-w-2xl mx-auto leading-relaxed">
             {stage.description}
           </p>
 
           {/* 装饰线 */}
           <div className="flex items-center justify-center mt-8">
-            <div className="h-[2px] w-20 bg-gradient-to-r from-transparent via-gray-400 to-transparent" />
+            <div className="h-[2px] w-20 bg-gradient-to-r from-transparent via-slate-600 to-transparent" />
             <div className={`mx-4 w-3 h-3 rounded-full bg-gradient-to-r ${titleGradient}`} />
-            <div className="h-[2px] w-20 bg-gradient-to-r from-transparent via-gray-400 to-transparent" />
+            <div className="h-[2px] w-20 bg-gradient-to-r from-transparent via-slate-600 to-transparent" />
           </div>
         </motion.div>
 

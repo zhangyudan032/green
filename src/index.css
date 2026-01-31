@@ -6,34 +6,34 @@
    全局变量 (v2.0.0)
    ======================================== */
 :root {
-  /* 主色调 */
-  --primary-color: #667eea;
-  --primary-dark: #5568d3;
-  --secondary-color: #764ba2;
-  --secondary-dark: #603a8a;
+  /* 主色调 - emerald 绿色系 */
+  --primary-color: #10b981;
+  --primary-dark: #059669;
+  --secondary-color: #34d399;
+  --secondary-dark: #10b981;
 
   /* 中性色 */
-  --wolf-gray: #4A5568;
-  --wolf-dark: #2D3748;
-  --text-primary: #1a202c;
-  --text-secondary: #4a5568;
-  --text-light: #718096;
+  --wolf-gray: #94a3b8;
+  --wolf-dark: #cbd5e1;
+  --text-primary: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --text-light: #64748b;
 
   /* 背景色 */
-  --bg-primary: #ffffff;
-  --bg-secondary: #f7fafc;
-  --bg-dark: #1a202c;
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-dark: #020617;
 
   /* 强调色 */
-  --forest-green: #2F855A;
-  --sky-blue: #63B3ED;
-  --sunset-orange: #ED8936;
+  --forest-green: #10b981;
+  --sky-blue: #38bdf8;
+  --sunset-orange: #f59e0b;
 
   /* 阴影 */
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
-  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
-  --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.2);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.4);
+  --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.5);
 
   /* 过渡时间 */
   --transition-fast: 0.2s;
@@ -341,14 +341,14 @@ img {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--bg-secondary);
+  background: #0f172a;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--primary-color);
+  background: #334155;
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--primary-dark);
+  background: #10b981;
 }

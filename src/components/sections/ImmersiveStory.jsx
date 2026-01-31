@@ -7,7 +7,7 @@ const ImmersiveStory = memo(({ stage }) => {
   return (
     <section
       id={`stage-${stage.id}`}
-      className="relative bg-gradient-to-br from-purple-50 via-pink-50 to-purple-100 py-20 min-h-screen"
+      className="relative bg-gradient-to-br from-slate-900 via-slate-900 to-black py-20 min-h-screen"
     >
         <div className="container mx-auto px-4 max-w-4xl">
           {/* 阶段标题 */}
@@ -18,20 +18,20 @@ const ImmersiveStory = memo(({ stage }) => {
             transition={{ duration: 0.5, ease: "easeOut" }}
             className="text-center mb-16"
           >
-            <div className="text-sm text-gray-500 mb-2">阶段 {stage.id}</div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+            <div className="text-sm text-slate-500 mb-2">阶段 {stage.id}</div>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
               {stage.title}
             </h2>
-            <div className="text-gray-600 text-lg mb-6">{stage.timeRange}</div>
-            <p className="text-gray-700 max-w-2xl mx-auto leading-relaxed">
+            <div className="text-slate-400 text-lg mb-6">{stage.timeRange}</div>
+            <p className="text-slate-300 max-w-2xl mx-auto leading-relaxed">
               {stage.description}
             </p>
 
             {/* 装饰线 */}
             <div className="flex items-center justify-center mt-8">
-              <div className="h-[2px] w-20 bg-gradient-to-r from-transparent via-purple-400 to-transparent" />
-              <div className="mx-4 w-3 h-3 rounded-full bg-gradient-to-r from-purple-600 to-pink-600" />
-              <div className="h-[2px] w-20 bg-gradient-to-r from-transparent via-purple-400 to-transparent" />
+              <div className="h-[2px] w-20 bg-gradient-to-r from-transparent via-slate-600 to-transparent" />
+              <div className="mx-4 w-3 h-3 rounded-full bg-gradient-to-r from-purple-400 to-pink-400" />
+              <div className="h-[2px] w-20 bg-gradient-to-r from-transparent via-slate-600 to-transparent" />
             </div>
           </motion.div>
 
@@ -46,12 +46,12 @@ const ImmersiveStory = memo(({ stage }) => {
           >
             {/* 大标题 */}
             <div className="text-center">
-              <h3 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+              <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
                 {story.title}
               </h3>
-              <div className="text-gray-500">{story.date}</div>
+              <div className="text-slate-400">{story.date}</div>
               {story.documentClip && (
-                <div className="text-xs text-gray-400 italic mt-2">
+                <div className="text-xs text-slate-500 italic mt-2">
                   {story.documentClip}
                 </div>
               )}
@@ -71,12 +71,12 @@ const ImmersiveStory = memo(({ stage }) => {
                 className="w-full h-96 md:h-[500px] object-cover"
                 style={{ willChange: 'auto' }}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-purple-600/30 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
             </motion.div>
 
             {/* 故事正文 */}
-            <div className="prose prose-lg max-w-none">
-              <div className="text-gray-800 leading-loose text-lg whitespace-pre-line">
+            <div className="prose prose-lg prose-invert max-w-none">
+              <div className="text-slate-200 leading-loose text-lg whitespace-pre-line">
                 {story.content}
               </div>
             </div>
@@ -87,9 +87,9 @@ const ImmersiveStory = memo(({ stage }) => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
-              className="mt-16 p-8 bg-white/60 backdrop-blur-sm rounded-2xl border-l-4 border-purple-500 shadow-lg"
+              className="mt-16 p-8 bg-black/50 backdrop-blur-sm rounded-2xl border-l-4 border-emerald-500 shadow-lg border border-slate-800"
             >
-              <p className="text-xl md:text-2xl text-gray-700 italic leading-relaxed">
+              <p className="text-xl md:text-2xl text-slate-300 italic leading-relaxed">
                 "这场重逢，是跨越岁月的牵挂，也是人与狼之间最动人的双向奔赴。"
               </p>
             </motion.div>

@@ -65,7 +65,7 @@ const HeroSectionV3 = () => {
             <motion.div
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 1.5, repeat: Infinity }}
-              className="flex flex-col items-center gap-2 hover:text-green-400 transition-colors"
+              className="flex flex-col items-center gap-2 hover:text-emerald-400 transition-colors"
             >
               <span className="text-sm">开始阅读</span>
               <FaChevronDown className="text-2xl" />
@@ -75,7 +75,7 @@ const HeroSectionV3 = () => {
       </div>
 
       {/* 底部渐变 */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent z-10" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-slate-900 to-transparent z-10" />
     </section>
   )
 }
